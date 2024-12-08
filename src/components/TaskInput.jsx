@@ -11,7 +11,7 @@ const TaskInput = ({ onAddTask }) => {
   };
 
   return (
-    <div>
+    <div className="task-input-container">
       <label>
         Nome:
         <input

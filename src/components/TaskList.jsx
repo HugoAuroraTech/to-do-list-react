@@ -6,12 +6,20 @@ const TaskList = ({ tasks, onToggleTask, onRemoveTask }) => {
       <ul>
         {tasks.map((task) => (
           <li key={task.id} style={{ display: "flex", alignItems: "center" }}>
-            <span
-              onClick={() => onToggleTask(task.id)}
-              className={task.completed ? "completed" : ""}
-            >
+            <span className={task.completed ? "completed" : ""}>
               {task.text} {task.completed ? "✅" : "❌"}
             </span>
+            <button
+              className={
+                task.completed
+                  ? "toggle-button-completed"
+                  : "toggle-button-uncompleted"
+              }
+              onClick={() => onToggleTask(task.id)}
+              style={{ marginLeft: "30px" }}
+            >
+              {task.completed ? "Concluido" : "Incompleto"}
+            </button>
             <button
               onClick={() => onRemoveTask(task.id)}
               style={{ marginLeft: "10px" }}

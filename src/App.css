@@ -1,5 +1,6 @@
 /* Estilização geral */
 body {
+  align-items: center;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body {
 
 /* Contêiner principal */
 .app-container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 50px auto;
   background: rgba(255, 255, 255, 0.7);
   padding: 20px;
@@ -19,6 +20,14 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px); /* Aplica o desfoque */
   -webkit-backdrop-filter: blur(10px);
+}
+
+.task-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 /* Título */
@@ -59,33 +68,80 @@ button:hover {
 }
 
 /* Lista de tarefas */
+/* Lista de tarefas */
 ul {
   list-style: none;
   padding: 0;
-  height: 300px;
+  height: auto;
   overflow-y: auto;
+  overflow-x: hidden;
   margin-bottom: 20px;
+  padding: 10px;
 }
 
 li {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   background: #f9f9f9;
   margin-bottom: 10px;
-  padding: 10px 15px;
+  padding: 10px;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: auto;
 }
 
 li span {
-  cursor: pointer;
   flex: 1;
+  overflow-wrap: break-word; /* Quebra palavras longas */
+  word-wrap: break-word; /* Compatibilidade com navegadores mais antigos */
+  word-break: break-word; /* Quebra forçada de palavras longas */
+  white-space: normal; /* Garante que o texto pode quebrar */
+  padding-right: 10px; /* Adiciona um pouco de espaçamento para o botão */
 }
 
 li span.completed {
   text-decoration: line-through;
   color: #aaa;
+}
+
+li .toggle-button-completed {
+  background-color: #14db8f;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+li .toggle-button-completed:hover {
+  background-color: #0fb877;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+li .toggle-button-completed {
+  background-color: #14db8f;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+li .toggle-button-completed:hover {
+  background-color: #0fb877;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 li button {
