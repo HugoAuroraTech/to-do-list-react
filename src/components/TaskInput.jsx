@@ -10,6 +10,14 @@ const TaskInput = ({ onAddTask }) => {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleAddClick();
+      console.log("Valor enviado:", inputText);
+    }
+  };
+
   return (
     <div className="task-input-container">
       <label>
@@ -20,6 +28,7 @@ const TaskInput = ({ onAddTask }) => {
           placeholder="Digite sua tarefa"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
         <button onClick={handleAddClick}>Adicionar</button>
       </label>
